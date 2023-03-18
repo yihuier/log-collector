@@ -1,6 +1,5 @@
 package xyz.yihuier.logcollector.controller;
 
-import org.elasticsearch.common.inject.Inject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
