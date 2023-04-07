@@ -3,8 +3,8 @@ package xyz.yihuier.logcollector.kafka;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
-import xyz.yihuier.logcollector.constant.LogCollectorKafkaTopic;
-import xyz.yihuier.logcollector.domain.WebLog;
+import xyz.yihuier.logcollector.api.WebLogMessage;
+import xyz.yihuier.logcollector.api.topic.LogCollectorKafkaTopic;
 
 /**
  * @author linas
@@ -12,9 +12,9 @@ import xyz.yihuier.logcollector.domain.WebLog;
 @Component
 public class LogProvider {
     @Autowired
-    private KafkaTemplate<String, WebLog> kafkaTemplate;
+    private KafkaTemplate<String, WebLogMessage> kafkaTemplate;
 
-    public void sendLogMessage(WebLog webLog) {
+    public void sendLogMessage(WebLogMessage webLog) {
         kafkaTemplate.send(LogCollectorKafkaTopic.LOG_COLLECT, webLog);
     }
 }

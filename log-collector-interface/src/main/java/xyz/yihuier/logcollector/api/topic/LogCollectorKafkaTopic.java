@@ -1,4 +1,4 @@
-package xyz.yihuier.logcollector.constant;
+package xyz.yihuier.logcollector.api.topic;
 
 /**
  * @author yihuier
